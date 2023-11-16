@@ -3,7 +3,7 @@ version: '3.8'
 services:
 
   sut:
-    image: your-org/sut:stable-tag # replace with your image
+    image: front
     depends_on:
       - vote
       - result
@@ -12,8 +12,8 @@ services:
       - front-tier
 
   vote:
-    image: your-org/vote:stable-tag # replace with your image
-    ports: ["8080:80"] # change host port if needed
+    image: app
+    ports: ["8080:80"] 
     depends_on:
       - redis
       - db
@@ -22,8 +22,8 @@ services:
       - back-tier
 
   result:
-    image: your-org/result:stable-tag # replace with your image
-    ports: ["8081:80"] # change host port if needed
+    image: result
+    ports: ["8081:80"] 
     depends_on:
       - redis
       - db
@@ -32,7 +32,7 @@ services:
       - back-tier
 
   worker:
-    image: your-org/worker:stable-tag # replace with your image
+    image: backend
     depends_on:
       - redis
       - db
@@ -47,8 +47,8 @@ services:
   db:
     image: postgres:9.4
     environment:
-      POSTGRES_USER: "secureuser" # change as needed
-      POSTGRES_PASSWORD: "securepassword" # change as needed
+      POSTGRES_USER: "User@123"
+      POSTGRES_PASSWORD: "password@123"
     volumes:
       - "db-data:/var/lib/postgresql/data"
     networks:
