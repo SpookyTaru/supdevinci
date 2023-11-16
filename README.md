@@ -1,4 +1,4 @@
-# Who Runn The World app? CATs or DOGs ?
+# Who Run The World app? CATs or DOGs ?
 
 A simple distributed application running across multiple Docker containers.
 
@@ -30,8 +30,8 @@ deal with them in Docker at a basic level.
 
 # Requirements
 
-This project involve deploying a kubernetes cluster and the VMs that you use **MUST** be public vms. Local vms will not allow you to achieve all the tasks.
-You MUST create 3 virtual machines. One named `master` and the other ones `worker1` and `worker2`
+This project involve deploying a kubernetes cluster and the VMs that you use **MUST** be public vms. Feel free to une a local runner that can access your local VMs.
+You MUST create 3 virtual machines. One named `[last-name]-master` and the other ones `[last-name]-worker1` and `[last-name]-worker2`
 
 # Taks
 
@@ -50,7 +50,7 @@ You MUST create 3 virtual machines. One named `master` and the other ones `worke
 ## CICD
 
 1. Create a CICD pipeline that automatique the deployment of the whole app (all the services)
-2. Make use of Kubernetes namespaces in order to have `dev`and `prod` environments.
+2. Make use of Kubernetes namespaces in order to have `dev`and `prod` environments. Please make sure the `prod` deployment is triggered from web and provide manualy the image to be deployed.
 3. Please make sure your pipeline deploy different version of the app in each environement.
 
 ## BONUS
